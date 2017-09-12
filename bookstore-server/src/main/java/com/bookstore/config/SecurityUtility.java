@@ -18,13 +18,13 @@ public class SecurityUtility {
 	
 	@Bean
 	public static String randomPassword() {
-		String SALTCHAR = "ABCDEFGHIJKLMNOPQRTUVWXYZ1234567890";
+		String SALTCHARS = "ABCDEFGHIJKLMNOPQRTUVWXYZ1234567890";
 		StringBuilder salt = new StringBuilder();
 		Random rnd = new Random();
 		
 		while(salt.length() < 18) {
-			int index = (int)(rnd.nextFloat() + SALTCHAR.length());
-			salt.append(SALTCHAR).charAt(index);
+			int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+			salt.append(SALTCHARS.charAt(index));
 		}
 		
 		return salt.toString();
