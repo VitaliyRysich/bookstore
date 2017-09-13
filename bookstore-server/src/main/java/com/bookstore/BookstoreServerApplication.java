@@ -26,7 +26,7 @@ public class BookstoreServerApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String ...args) {
-/*		User user1 = new User();
+		User user1 = new User();
 		user1.setFirstName("John");
 		user1.setLastName("Adams");
 		user1.setUsername("j");
@@ -53,20 +53,7 @@ public class BookstoreServerApplication implements CommandLineRunner {
 		role2.setName("ROLE_ADMIN");
 		userRoles.add(new UserRole(user2,role2));
 		
-		userService.createUser(user2, userRoles);*/
-		
-		User user1 = new User();
-		user1.setFirstName("John2");
-		user1.setLastName("Adams2");
-		user1.setUsername("j2");
-		user1.setPassword(SecurityUtility.passwordEncoder().encode("p"));
-		user1.setEmail("JAdams@gmail.com");
-		Set<UserRole> userRoles = new HashSet<>();
-		Role role1 = new Role();
-		role1.setRoleId(1);
-		role1.setName("ROLE_USER");
-		userRoles.add(new UserRole(user1,role1));
-		userService.createUser(user1, userRoles);
+		userService.createUser(user2, userRoles);
 		
 	}
 }
