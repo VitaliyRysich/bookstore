@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { routing } from './app.routing';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
@@ -21,6 +22,7 @@ import { LoginService } from './services/login.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    routing,
     MaterialModule
   ],
   providers: [
