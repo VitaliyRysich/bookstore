@@ -1,9 +1,6 @@
 package com.bookstore.config;
 
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,16 +10,16 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
-public class RequestFilter {
+public class RequestFilter implements Filter{
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		
-		response.setHeader("Access-Controle-Allow-Origin", "*");
-		response.setHeader("Access-Controle-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
-		response.setHeader("Access-Controle-Allow-Headers", "x-requested-with, x-auth-token");
-		response.setHeader("Access-Controle-Max-Age", "3600");
-		response.setHeader("Access-Controle-Allow-Creadentials", "true");
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
+		response.setHeader("Access-Control-Allow-Headers", "x-requested-with, x-auth-token");
+		response.setHeader("Access-Control-Max-Age", "3600");
+		response.setHeader("Access-Control-Allow-Credentials", "true");
 		
 		if(!(request.getMethod().equalsIgnoreCase("OPTIONS"))) {
 			try {
@@ -32,10 +29,10 @@ public class RequestFilter {
 			}
 		}else {
 			System.out.println("Pre-fight");
-			response.setHeader("Access-Controle-Allow-Methods", "POST, GET, DELETE");
-			response.setHeader("Access-Controle-Max-Age", "3600");
-			response.setHeader("Access-Controle-Allow-Headers", "authorization, content-type, x-requested-with, x-auth-token, " +
-					"acces-control-request-headers, acces-control-request-method, accept, origin");
+			response.setHeader("Access-Control-Allow-Methods", "POST, GET, DELETE");
+			response.setHeader("Access-Control-Max-Age", "3600");
+			response.setHeader("Access-Control-Allow-Headers", "authorization, content-type, x-requested-with, x-auth-token, " +
+					"access-control-request-headers, acces-control-request-method, accept, origin");
 			response.setStatus(HttpServletResponse.SC_OK);
 		}	
 	}
