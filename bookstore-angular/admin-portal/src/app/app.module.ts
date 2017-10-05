@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 // import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MatGridListModule } from '@angular/material';
+import { MatButtonModule, MatGridListModule, MatInputModule, MatToolbarModule, MatSelectModule, MatSlideToggleModule } from '@angular/material';
 
 import 'hammerjs';
 
@@ -14,13 +14,17 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
 
 import { LoginService } from './services/login.service';
+import { AddBookService } from './services/add-book.service';
+
+import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    LoginComponent
+    LoginComponent,
+    AddNewBookComponent
   ],
   imports: [
     BrowserModule,
@@ -30,14 +34,15 @@ import { LoginService } from './services/login.service';
     // MaterialModule
     BrowserAnimationsModule,
     MatButtonModule, 
-    MdCardModule, 
-    MdMenuModule, 
-    MdToolbarModule, 
-    MdIconModule,
-    MatGridListModule
+    MatInputModule,
+    MatGridListModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatSlideToggleModule
   ],
   providers: [
-    LoginService
+    LoginService,
+    AddBookService
   ],
   bootstrap: [AppComponent]
 })
