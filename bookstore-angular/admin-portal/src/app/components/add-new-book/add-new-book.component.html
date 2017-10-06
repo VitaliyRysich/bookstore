@@ -2,24 +2,23 @@
       <div [hidden]="bookAdded">
           <h3 style="margin-top: 30px;"> New Book Information <span style="font-size:small">* is a required field</span></h3>
 
-        <form (ngSubmit)="OnSubmit()">
+        <form (ngSubmit)="onSubmit()">
             <md-grid-list cols="4" rowHeight="60px">
                     <md-grid-tile colspan="4" rowspan="1">
-                    <md-input-container>
+                    <md-input-container class="full-width">
                         <input mdInput id="title" type="text" required [(ngModel)]="newBook.title" name="title" placeholder="Title">
-
                     </md-input-container> 
                 </md-grid-tile>  
             </md-grid-list>
     
             <md-grid-list cols="4" rowHeight="60px">
                 <md-grid-tile [colspan]="2" [rowspan]="1">
-                    <md-input-container>
+                    <md-input-container class="full-width">
                         <input mdInput id="outhor" type="text" required [(ngModel)]="newBook.author" name="author" placeholder="Author">
                     </md-input-container>
                 </md-grid-tile>
                 <md-grid-tile [colspan]="2" [rowspan]="1">
-                        <md-input-container>
+                        <md-input-container class="full-width">
                             <input mdInput id="publisher" type="text" required [(ngModel)]="newBook.publisher" name="publisher" placeholder="Publisher">
                         </md-input-container>
                     </md-grid-tile>
@@ -27,7 +26,7 @@
 
                 <md-grid-list cols="4" rowHeight="60px">
                     <md-grid-tile [colspan]="4" [rowspan]="1">
-                        <md-input-container>
+                        <md-input-container class="full-width">
                             <input mdInput id="publicationDate" type="date" required [(ngModel)]="newBook.publicationDate" name="publicationDate" placeholder="PublicationDate">
                         </md-input-container>
                     </md-grid-tile>
@@ -53,12 +52,12 @@
                 
                 <md-grid-list cols="4" rowHeight="60px">
                     <md-grid-tile [colspan]="2" [rowspan]="1">
-                        <md-input-container>
+                        <md-input-container class="full-width">
                             <input mdInput id="pageNumber" type="number" [(ngModel)]="newBook.numberOfPages" name="numberOfPages" step="1" placeholder="Number of Pages">
                         </md-input-container>
                     </md-grid-tile>
                     <md-grid-tile [colspan]="2" [rowspan]="1">
-                        <md-input-container>
+                        <md-input-container class="full-width">
                             <input mdInput id="isbn" type="text" required [(ngModel)]="newBook.isbn" name="isbn" placeholder="ISBN">
                         </md-input-container>
                     </md-grid-tile>
@@ -66,12 +65,12 @@
                 
                 <md-grid-list cols="4" rowHeight="60px">
                     <md-grid-tile [colspan]="2" [rowspan]="1">
-                        <md-input-container>
+                        <md-input-container class="full-width">
                             <input mdInput id="listPrice" type="number" [(ngModel)]="newBook.listPrice" name="listPrice" step="0.01" placeholder="List Price">
                         </md-input-container>
                     </md-grid-tile>
                     <md-grid-tile [colspan]="2" [rowspan]="1">
-                        <md-input-container>
+                        <md-input-container class="full-width">
                             <input mdInput id="ourPrice" type="number" [(ngModel)]="newBook.ourPrice" name="ourPrice" step="0.01" placeholder="Our Price">
                         </md-input-container>
                     </md-grid-tile>
@@ -79,7 +78,7 @@
                 
                 <md-grid-list cols="4" rowHeight="60px">
                     <md-grid-tile [colspan]="2" [rowspan]="1">
-                        <md-input-container>
+                        <md-input-container class="full-width">
                             <input mdInput id="shippingWeight" type="number" [(ngModel)]="newBook.shippingWeight" name="shippingWeight" step="0.01" placeholder="Shipping Weight">
                         </md-input-container>&nbsp;zł&nbsp;
                     </md-grid-tile>
@@ -93,7 +92,7 @@
                 
                 <md-grid-list cols="4" rowHeight="60px">
                     <md-grid-tile [colspan]="2" [rowspan]="1">
-                        <md-input-container>
+                        <md-input-container class="full-width">
                             <input mdInput id="inStockNumber" type="number" [(ngModel)]="newBook.inStockNumber" name="inStockNumber" step="0.01" placeholder="Numbers In Stock">
                         </md-input-container>
                     </md-grid-tile>
@@ -103,7 +102,7 @@
                     </md-grid-tile>
                 </md-grid-list>
                 
-                <md-input-container>
+                <md-input-container class="full-width">
                     <textarea mdInput id="description" [(ngModel)]="newBook.description" name="description" placeholder="Description" required></textarea>
                 </md-input-container>
                 Image &nbsp;
