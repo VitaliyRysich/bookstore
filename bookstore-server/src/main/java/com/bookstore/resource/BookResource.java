@@ -15,6 +15,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by Vitalii on 05.10.2017.
@@ -35,7 +36,8 @@ public class BookResource {
     @RequestMapping (value = "/add/image", method = RequestMethod.POST)
     public ResponseEntity upload(
             @RequestParam("id") Long id,
-            HttpServletResponse response, HttpServletRequest request
+            HttpServletResponse response,
+            HttpServletRequest request
             ){
         try{
             Book book = bookService.findOne(id);
@@ -50,11 +52,16 @@ public class BookResource {
             stream.close();
 
             return new ResponseEntity("Upload Success!", HttpStatus.OK);
+
         }catch (Exception e){
             e.printStackTrace();
             return new ResponseEntity("Upload failed!", HttpStatus.BAD_REQUEST);
         }
+    }
 
+    @RequestMapping("/bookList")
+    public List<Book> getBookList(){
+        return bookService.findAll();
     }
 
 

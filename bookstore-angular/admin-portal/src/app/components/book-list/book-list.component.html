@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="table-responsive" style="margin-top: 30px;">
+        <table id="bookListTable" class="table bordered highlight">
+           <thead>
+              <tr>
+                  <th>
+                      <input type="checkbox" (change) = "updateSelected($event.target.checked)" />
+                  </th>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Category</th>
+                  <th>List Price</th>
+                  <th>Our Price</th>
+                  <th>Active?</th>
+                  <th>Operation</th>
+              </tr>
+           
+           </thead>
+           <tbody>
+                <tr *ngFor = "let book of bookList">
+                    <input hidden="hidden" name="id" />
+                    <input type="checkbox" [checkced]="allChecked" (change)="updateRemoveBookList($event.target.checked, book)" />
+                </tr>
+
+           </tbody>
+
+        </table>
+    </div>
+</div>
