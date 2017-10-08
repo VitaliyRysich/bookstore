@@ -64,6 +64,19 @@ public class BookResource {
         return bookService.findAll();
     }
 
+    @RequestMapping(value="/update", method=RequestMethod.POST)
+    public Book updateBookPost(@RequestBody Book book){
+        return bookService.save(book);
+    }
+
+    @RequestMapping("/{id}")
+    public  Book getBook(@PathVariable("id") Long id){
+        Book book = bookService.findOne(id);
+        return book;
+    }
+
+
+
 
 
 }
