@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 // import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatGridListModule, MatInputModule, MatToolbarModule, MatSelectModule, MatSlideToggleModule } from '@angular/material';
+import { MatButtonModule, MatGridListModule, MatInputModule, MatToolbarModule, MatSelectModule, MatSlideToggleModule, MatDialogModule } from '@angular/material';
 
 import 'hammerjs';
 
@@ -16,13 +16,14 @@ import { UploadImageService } from './services/upload-image.service';
 import { GetBookListService } from './services/get-book-list.service';
 import { GetBookService } from './services/get-book.service';
 import { EditBookService } from './services/edit-book.service';
+import { RemoveBookService } from './services/remove-book.service';
 
 
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { LoginComponent } from './components/login/login.component';
 import { AddNewBookComponent } from './components/add-new-book/add-new-book.component';
-import { BookListComponent } from './components/book-list/book-list.component';
+import { BookListComponent, DialogResultExampleDialog } from './components/book-list/book-list.component';
 import { ViewBookComponent } from './components/view-book/view-book.component';
 import { EditBookComponent } from './components/edit-book/edit-book.component';
 
@@ -34,6 +35,7 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
     LoginComponent,
     AddNewBookComponent,
     BookListComponent,
+    DialogResultExampleDialog,
     ViewBookComponent,
     EditBookComponent
   ],
@@ -49,7 +51,8 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
     MatGridListModule,
     MatToolbarModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatDialogModule
   ],
   providers: [
     LoginService,
@@ -57,8 +60,9 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
     UploadImageService,
     GetBookListService,
     GetBookService,
-    EditBookService
+    EditBookService,
+    RemoveBookService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, DialogResultExampleDialog]
 })
 export class AppModule { }

@@ -4,7 +4,7 @@
            <thead>
               <tr>
                   <th>
-                      <input type="checkbox" (change) = "updateSelected($event.target.checked)" />
+                      <input type="checkbox" [checked]="allChecked" (change) = "updateSelected($event.target.checked)" />
                   </th>
                   <th>Title</th>
                   <th>Author</th>
